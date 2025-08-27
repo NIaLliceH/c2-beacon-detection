@@ -1,0 +1,24 @@
+{
+  "index_patterns": ["pcap-c2-analysis-*"],
+  "template": {
+    "settings": {
+      "number_of_shards": 1,
+      "number_of_replicas": 0,
+      "index.lifecycle.name": "pcap-c2-policy"
+    },
+    "mappings": {
+      "properties": {
+        "@timestamp": { "type": "date" },
+        "timestamp": { "type": "date" },
+        "src_ip": { "type": "ip" },
+        "dst_ip": { "type": "ip" },
+        "packet_count": { "type": "long" },
+        "total_payload_size": { "type": "long" },
+        "connection_duration": { "type": "double" },
+        "connection_interval": { "type": "double" },
+        "average_jitter": { "type": "double" }
+      }
+    }
+  },
+  "priority": 501
+}
