@@ -1,5 +1,6 @@
 {
-  "index_patterns": ["pcap-c2-analysis-*"],
+  "index_patterns": ["pcap-c2-analysis*"],
+  "data_stream": {},
   "template": {
     "settings": {
       "number_of_shards": 1,
@@ -19,6 +20,6 @@
         "average_jitter": { "type": "double" }
       }
     }
-  },
-  "priority": 501
+  }
 }
+

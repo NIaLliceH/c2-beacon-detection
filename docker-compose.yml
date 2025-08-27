@@ -91,7 +91,7 @@ services:
     volumes:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro,Z
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro,Z
-      - ./json-output:/usr/share/logstash/input_data:ro,Z
+      - ./logstash-input:/usr/share/logstash/logstash-input:ro,Z
     ports:
       - 5044:5044
       - 50000:50000/tcp
