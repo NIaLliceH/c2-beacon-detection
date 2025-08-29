@@ -107,6 +107,7 @@ services:
     depends_on:
       - elasticsearch
     restart: unless-stopped
+    command: ["logstash", "--pipeline.workers", "1"]
 
   kibana:
     container_name: kibana
