@@ -3,7 +3,6 @@ import json
 from collections import defaultdict
 import sys
 import os
-from datetime import datetime
 
 def calculate_jitter(timestamps):
     """Calculates the average jitter from a list of packet timestamps."""

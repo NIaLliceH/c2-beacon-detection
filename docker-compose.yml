@@ -59,6 +59,7 @@ services:
     network_mode: none
 
   elasticsearch:
+    container_name: elasticsearch
     build:
       context: elasticsearch/
       args:
@@ -68,7 +69,7 @@ services:
       - elasticsearch:/usr/share/elasticsearch/data:Z
     ports:
       - 9200:9200
-      - 9300:9300
+      # - 9300:9300
     environment:
       node.name: elasticsearch
       ES_JAVA_OPTS: -Xms512m -Xmx512m
@@ -84,6 +85,7 @@ services:
     restart: unless-stopped
 
   logstash:
+    container_name: logstash
     build:
       context: logstash/
       args:
@@ -96,7 +98,7 @@ services:
       - 5044:5044
       - 50000:50000/tcp
       - 50000:50000/udp
-      - 9600:9600
+      # - 9600:9600
     environment:
       LS_JAVA_OPTS: -Xms256m -Xmx256m
       LOGSTASH_INTERNAL_PASSWORD: ${LOGSTASH_INTERNAL_PASSWORD:-}
@@ -107,6 +109,7 @@ services:
     restart: unless-stopped
 
   kibana:
+    container_name: kibana
     build:
       context: kibana/
       args:
@@ -121,6 +124,26 @@ services:
       - elk
     depends_on:
       - elasticsearch
+    restart: unless-stopped
+
+  filebeat:
+    container_name: filebeat
+    build:
+      context: extensions/filebeat/
+      args:
+        ELASTIC_VERSION: ${ELASTIC_VERSION}
+    volumes:
+      - ./extensions/filebeat/config/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro,Z
+      - ./extensions/filebeat/modules.d:/usr/share/filebeat/modules.d:ro,Z
+      - /var/log/suricata/eve.json:/var/log/suricata/eve.json:ro,Z
+      - /opt/zeek/logs/current:/var/log/zeek:ro,Z
+    environment:
+      FILEBEAT_INTERNAL_PASSWORD: ${FILEBEAT_INTERNAL_PASSWORD:-}
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+      - logstash
     restart: unless-stopped
 
 networks:

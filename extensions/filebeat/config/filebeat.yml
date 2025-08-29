@@ -4,46 +4,67 @@
 
 name: filebeat
 
+logging.level: debug
+
+filebeat.inputs:
+  - type: filestream
+    id: suricata-logs
+    enabled: true
+    paths:
+      - /var/log/suricata/eve.json
+
+  # - type: filestream
+  #   id: zeek-logs
+  #   enabled: true
+  #   paths:
+  #     - /var/log/zeek/*.log
+
+
 filebeat.config:
   modules:
     path: ${path.config}/modules.d/*.yml
     reload.enabled: false
 
-filebeat.autodiscover:
-  providers:
-    # The Docker autodiscover provider automatically retrieves logs from Docker
-    # containers as they start and stop.
-    - type: docker
-      hints.enabled: true
-      hints.default_config:
-        type: container
-        paths:
-          - /var/lib/docker/containers/${data.container.id}/*-json.log
-      templates:
-        - condition:
-            contains:
-              docker.container.image: elasticsearch
-          config:
-            - module: elasticsearch
-              server:
-                input:
-                  type: container
-                  paths:
-                    - /var/lib/docker/containers/${data.container.id}/*-json.log
+# filebeat.autodiscover:
+#   providers:
+#     # The Docker autodiscover provider automatically retrieves logs from Docker
+#     # containers as they start and stop.
+#     - type: docker
+#       hints.enabled: true
+#       hints.default_config:
+#         type: container
+#         paths:
+#           - /var/lib/docker/containers/${data.container.id}/*-json.log
+#       templates:
+#         - condition:
+#             contains:
+#               docker.container.image: elasticsearch
+#           config:
+#             - module: elasticsearch
+#               server:
+#                 input:
+#                   type: container
+#                   paths:
+#                     - /var/lib/docker/containers/${data.container.id}/*-json.log
 
 processors:
   - add_cloud_metadata: ~
 
-monitoring:
-  enabled: true
-  elasticsearch:
-    username: beats_system
-    password: ${BEATS_SYSTEM_PASSWORD}
+# monitoring:
+#   enabled: true
+#   elasticsearch:
+#     username: beats_system
+#     password: ${BEATS_SYSTEM_PASSWORD}
 
-output.elasticsearch:
-  hosts: [ http://elasticsearch:9200 ]
-  username: filebeat_internal
-  password: ${FILEBEAT_INTERNAL_PASSWORD}
+# output.elasticsearch:
+#   hosts: [ http://elasticsearch:9200 ]
+#   username: filebeat_internal
+#   password: ${FILEBEAT_INTERNAL_PASSWORD}
+
+output.logstash:
+  hosts: [ logstash:5044 ]
+  # username: filebeat_internal
+  # password: ${FILEBEAT_INTERNAL_PASSWORD}
 
 ## HTTP endpoint for health checking
 ## https://www.elastic.co/docs/reference/beats/filebeat/http-endpoint
