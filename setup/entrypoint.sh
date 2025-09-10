@@ -18,6 +18,7 @@ users_passwords=(
 	[heartbeat_internal]="${HEARTBEAT_INTERNAL_PASSWORD:-}"
 	[monitoring_internal]="${MONITORING_INTERNAL_PASSWORD:-}"
 	[beats_system]="${BEATS_SYSTEM_PASSWORD:-}"
+	[analyzer_internal]="${ANALYZER_INTERNAL_PASSWORD:-}"
 )
 
 declare -A users_roles
@@ -27,6 +28,7 @@ users_roles=(
 	[filebeat_internal]='filebeat_writer'
 	[heartbeat_internal]='heartbeat_writer'
 	[monitoring_internal]='remote_monitoring_collector'
+	[analyzer_internal]='analyzer_writer'
 )
 
 # --------------------------------------------------------
@@ -38,6 +40,7 @@ roles_files=(
 	[metricbeat_writer]='metricbeat_writer.json'
 	[filebeat_writer]='filebeat_writer.json'
 	[heartbeat_writer]='heartbeat_writer.json'
+	[analyzer_writer]='analyzer_writer.json'
 )
 
 # --------------------------------------------------------

@@ -7,17 +7,17 @@ name: filebeat
 logging.level: debug
 
 filebeat.inputs:
-  - type: filestream
-    id: suricata-logs
-    enabled: true
-    paths:
-      - /var/log/suricata/eve.json
+#   - type: filestream
+#     id: suricata-logs
+#     enabled: true
+#     paths:
+#       - /var/log/suricata/eve.json
 
-  # - type: filestream
-  #   id: zeek-logs
-  #   enabled: true
-  #   paths:
-  #     - /var/log/zeek/*.log
+#   - type: filestream
+#     id: zeek-logs
+#     enabled: true
+#     paths:
+#       - /var/log/zeek/*.log
 
 
 filebeat.config:
@@ -56,13 +56,13 @@ processors:
 #     username: beats_system
 #     password: ${BEATS_SYSTEM_PASSWORD}
 
-# output.elasticsearch:
-#   hosts: [ http://elasticsearch:9200 ]
-#   username: filebeat_internal
-#   password: ${FILEBEAT_INTERNAL_PASSWORD}
+output.elasticsearch:
+  hosts: [ elasticsearch:9200 ]
+  username: filebeat_internal
+  password: ${FILEBEAT_INTERNAL_PASSWORD}
 
-output.logstash:
-  hosts: [ logstash:5044 ]
+# output.logstash:
+#   hosts: [ logstash:5044 ]
   # username: filebeat_internal
   # password: ${FILEBEAT_INTERNAL_PASSWORD}
 
