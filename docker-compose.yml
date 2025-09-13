@@ -136,8 +136,8 @@ services:
         ELASTIC_VERSION: ${ELASTIC_VERSION}
     volumes:
       - ./extensions/filebeat/config/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro,Z
-      - ./extensions/filebeat/modules.d:/usr/share/filebeat/modules.d:ro,Z
-      - /var/log/suricata/eve.json:/var/log/suricata/eve.json:ro,Z
+      - ./extensions/filebeat/config/modules.d:/usr/share/filebeat/modules.d:ro,Z
+      # - /var/log/suricata/eve.json:/var/log/suricata/eve.json:ro,Z
       - /opt/zeek/logs/current:/var/log/zeek:ro,Z
     environment:
       FILEBEAT_INTERNAL_PASSWORD: ${FILEBEAT_INTERNAL_PASSWORD:-}
@@ -147,8 +147,7 @@ services:
       - elasticsearch
       # - logstash
     restart: unless-stopped
-    command: ["-c", "/usr/share/filebeat/filebeat.yml", "-e", "--strict.perms=false", "setup", "--pipelines", "ingest-zeek-conn", "filebeat", "modules", "enable", "zeek", "ingest-zeek-conn"]
-
+    # command: [ "-c", "/usr/share/filebeat/filebeat.yml", "-e", "--strict.perms=false", "setup", "--pipelines", "ingest-zeek-conn", "filebeat", "modules", "enable", "zeek", "ingest-zeek-conn" ]
 
   analyzer:
     container_name: analyzer

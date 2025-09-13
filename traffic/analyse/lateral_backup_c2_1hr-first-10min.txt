@@ -1,0 +1,6 @@
+[SRC: 10.0.0.61 -> DST: 157.230.93.100]
+  - Total packets: 278 | SRC: 136 | DST: 142
+  - Avg interval: 2.103s | Jitter: 7.633s
+  - Source sent bytes: Avg=118.71, StdDev=172.9
+  - Destination sent bytes: Avg=521.96, StdDev=627.57
+

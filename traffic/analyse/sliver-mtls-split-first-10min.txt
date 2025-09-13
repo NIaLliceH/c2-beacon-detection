@@ -1,0 +1,360 @@
+[SRC: 192.168.28.129 -> DST: 192.168.99.245]
+  - Total packets: 739 | SRC: 68 | DST: 671
+  - Avg interval: 0.154s | Jitter: 2.878s
+  - Source sent bytes: Avg=208.79, StdDev=366.87
+  - Destination sent bytes: Avg=1433.54, StdDev=328.04
+
+[SRC: 192.168.28.131 -> DST: 192.168.99.245]
+  - Total packets: 424 | SRC: 212 | DST: 212
+  - Avg interval: 0.439s | Jitter: 0.686s
+  - Source sent bytes: Avg=66, StdDev=0.0
+  - Destination sent bytes: Avg=54, StdDev=0.0
+
+[SRC: 192.168.28.131 -> DST: 142.250.197.228]
+  - Total packets: 3 | SRC: 2 | DST: 1
+  - Avg interval: 1.885s | Jitter: 1.885s
+  - Source sent bytes: Avg=54.5, StdDev=0.5
+  - Destination sent bytes: Avg=54, StdDev=0.0
+
+[SRC: 192.168.28.131 -> DST: 52.78.223.124]
+  - Total packets: 4 | SRC: 2 | DST: 2
+  - Avg interval: 0.0s | Jitter: 0.0s
+  - Source sent bytes: Avg=54, StdDev=0.0
+  - Destination sent bytes: Avg=92.5, StdDev=38.5
+
+[SRC: 192.168.28.131 -> DST: 3.162.58.70]
+  - Total packets: 252 | SRC: 119 | DST: 133
+  - Avg interval: 0.677s | Jitter: 4.005s
+  - Source sent bytes: Avg=527.26, StdDev=606.68
+  - Destination sent bytes: Avg=313.56, StdDev=521.07
+
+[SRC: 192.168.28.129 -> DST: 34.107.221.82]
+  - Total packets: 48 | SRC: 24 | DST: 24
+  - Avg interval: 2.002s | Jitter: 4.018s
+  - Source sent bytes: Avg=60, StdDev=0.0
+  - Destination sent bytes: Avg=54, StdDev=0.0
+
+[SRC: 192.168.28.131 -> DST: 74.125.130.84]
+  - Total packets: 12 | SRC: 6 | DST: 6
+  - Avg interval: 15.168s | Jitter: 20.347s
+  - Source sent bytes: Avg=54.67, StdDev=0.47
+  - Destination sent bytes: Avg=54, StdDev=0.0
+
+[SRC: 192.168.28.131 -> DST: 150.171.27.12]
+  - Total packets: 3 | SRC: 1 | DST: 2
+  - Avg interval: 0.017s | Jitter: 0.017s
+  - Source sent bytes: Avg=54, StdDev=0.0
+  - Destination sent bytes: Avg=54, StdDev=0.0
+
+[SRC: 192.168.28.131 -> DST: 150.171.28.10]
+  - Total packets: 3 | SRC: 1 | DST: 2
+  - Avg interval: 0.017s | Jitter: 0.017s
+  - Source sent bytes: Avg=54, StdDev=0.0
+  - Destination sent bytes: Avg=54, StdDev=0.0
+
+[SRC: 192.168.28.131 -> DST: 23.32.249.67]
+  - Total packets: 4 | SRC: 2 | DST: 2
+  - Avg interval: 0.0s | Jitter: 0.0s
+  - Source sent bytes: Avg=54, StdDev=0.0
+  - Destination sent bytes: Avg=54, StdDev=0.0
+
+[SRC: 192.168.28.131 -> DST: 204.79.197.219]
+  - Total packets: 6 | SRC: 2 | DST: 4
+  - Avg interval: 0.007s | Jitter: 0.013s
+  - Source sent bytes: Avg=54, StdDev=0.0
+  - Destination sent bytes: Avg=54, StdDev=0.0
+
+[SRC: 192.168.28.131 -> DST: 131.253.33.203]
+  - Total packets: 9 | SRC: 3 | DST: 6
+  - Avg interval: 8.025s | Jitter: 13.189s
+  - Source sent bytes: Avg=54.67, StdDev=0.47
+  - Destination sent bytes: Avg=54, StdDev=0.0
+
+[SRC: 192.168.28.131 -> DST: 142.250.198.46]
+  - Total packets: 4 | SRC: 2 | DST: 2
+  - Avg interval: 0.02s | Jitter: 0.028s
+  - Source sent bytes: Avg=54, StdDev=0.0
+  - Destination sent bytes: Avg=54, StdDev=0.0
+
+[SRC: 192.168.28.131 -> DST: 142.250.198.34]
+  - Total packets: 22 | SRC: 11 | DST: 11
+  - Avg interval: 8.587s | Jitter: 17.661s
+  - Source sent bytes: Avg=229.09, StdDev=420.11
+  - Destination sent bytes: Avg=536.18, StdDev=647.93
+
+[SRC: 192.168.28.131 -> DST: 20.189.173.2]
+  - Total packets: 40 | SRC: 18 | DST: 22
+  - Avg interval: 0.058s | Jitter: 0.132s
+  - Source sent bytes: Avg=500.89, StdDev=571.86
+  - Destination sent bytes: Avg=273.55, StdDev=478.4
+
+[SRC: 192.168.28.131 -> DST: 108.157.32.98]
+  - Total packets: 571 | SRC: 185 | DST: 386
+  - Avg interval: 0.261s | Jitter: 3.259s
+  - Source sent bytes: Avg=567.56, StdDev=631.41
+  - Destination sent bytes: Avg=1020.26, StdDev=619.59
+
+[SRC: 192.168.28.131 -> DST: 3.162.58.100]
+  - Total packets: 20 | SRC: 10 | DST: 10
+  - Avg interval: 7.129s | Jitter: 16.405s
+  - Source sent bytes: Avg=379.1, StdDev=509.0
+  - Destination sent bytes: Avg=114.1, StdDev=167.7
+
+[SRC: 192.168.28.131 -> DST: 142.250.71.142]
+  - Total packets: 4 | SRC: 2 | DST: 2
+  - Avg interval: 0.016s | Jitter: 0.023s
+  - Source sent bytes: Avg=54, StdDev=0.0
+  - Destination sent bytes: Avg=54, StdDev=0.0
+
+[SRC: 192.168.28.131 -> DST: 3.162.58.105]
+  - Total packets: 51 | SRC: 26 | DST: 25
+  - Avg interval: 2.753s | Jitter: 10.63s
+  - Source sent bytes: Avg=298.88, StdDev=477.24
+  - Destination sent bytes: Avg=356.32, StdDev=514.89
+
+[SRC: 192.168.28.131 -> DST: 104.18.32.137]
+  - Total packets: 18 | SRC: 9 | DST: 9
+  - Avg interval: 8.236s | Jitter: 17.049s
+  - Source sent bytes: Avg=79.67, StdDev=31.05
+  - Destination sent bytes: Avg=113, StdDev=100.68
+
+[SRC: 192.168.28.131 -> DST: 20.189.173.1]
+  - Total packets: 74 | SRC: 34 | DST: 40
+  - Avg interval: 1.845s | Jitter: 7.58s
+  - Source sent bytes: Avg=363.85, StdDev=481.11
+  - Destination sent bytes: Avg=80.33, StdDev=39.2
+
+[SRC: 192.168.28.131 -> DST: 108.157.32.3]
+  - Total packets: 49 | SRC: 22 | DST: 27
+  - Avg interval: 3.315s | Jitter: 7.912s
+  - Source sent bytes: Avg=369, StdDev=505.14
+  - Destination sent bytes: Avg=543.81, StdDev=648.08
+
+[SRC: 192.168.28.131 -> DST: 3.162.58.11]
+  - Total packets: 1150 | SRC: 180 | DST: 970
+  - Avg interval: 0.122s | Jitter: 2.255s
+  - Source sent bytes: Avg=90.88, StdDev=52.74
+  - Destination sent bytes: Avg=1337.04, StdDev=427.36
+
+[SRC: 192.168.28.131 -> DST: 3.162.58.61]
+  - Total packets: 40 | SRC: 20 | DST: 20
+  - Avg interval: 3.613s | Jitter: 10.448s
+  - Source sent bytes: Avg=304.65, StdDev=470.56
+  - Destination sent bytes: Avg=239.85, StdDev=399.66
+
+[SRC: 192.168.28.131 -> DST: 108.157.32.32]
+  - Total packets: 21 | SRC: 11 | DST: 10
+  - Avg interval: 7.05s | Jitter: 15.972s
+  - Source sent bytes: Avg=424.91, StdDev=576.4
+  - Destination sent bytes: Avg=275.5, StdDev=434.05
+
+[SRC: 192.168.28.131 -> DST: 43.250.0.64]
+  - Total packets: 10 | SRC: 6 | DST: 4
+  - Avg interval: 0.17s | Jitter: 0.355s
+  - Source sent bytes: Avg=54, StdDev=0.0
+  - Destination sent bytes: Avg=69.5, StdDev=15.5
+
+[SRC: 192.168.28.131 -> DST: 3.162.58.65]
+  - Total packets: 218 | SRC: 46 | DST: 172
+  - Avg interval: 0.624s | Jitter: 5.255s
+  - Source sent bytes: Avg=151.37, StdDev=306.33
+  - Destination sent bytes: Avg=1280.85, StdDev=475.09
+
+[SRC: 192.168.28.131 -> DST: 3.162.58.9]
+  - Total packets: 70 | SRC: 18 | DST: 52
+  - Avg interval: 1.959s | Jitter: 9.178s
+  - Source sent bytes: Avg=82.67, StdDev=44.81
+  - Destination sent bytes: Avg=1135.6, StdDev=574.12
+
+[SRC: 192.168.28.131 -> DST: 150.171.28.11]
+  - Total packets: 13 | SRC: 6 | DST: 7
+  - Avg interval: 10.203s | Jitter: 17.901s
+  - Source sent bytes: Avg=97.33, StdDev=59.88
+  - Destination sent bytes: Avg=147.71, StdDev=211.37
+
+[SRC: 192.168.28.131 -> DST: 13.35.185.111]
+  - Total packets: 30 | SRC: 14 | DST: 16
+  - Avg interval: 4.701s | Jitter: 13.687s
+  - Source sent bytes: Avg=319.79, StdDev=497.82
+  - Destination sent bytes: Avg=479.25, StdDev=619.26
+
+[SRC: 192.168.28.131 -> DST: 113.171.12.161]
+  - Total packets: 8 | SRC: 4 | DST: 4
+  - Avg interval: 19.291s | Jitter: 22.275s
+  - Source sent bytes: Avg=55, StdDev=0.0
+  - Destination sent bytes: Avg=54, StdDev=0.0
+
+[SRC: 192.168.28.131 -> DST: 3.162.58.28]
+  - Total packets: 12 | SRC: 6 | DST: 6
+  - Avg interval: 13.634s | Jitter: 19.667s
+  - Source sent bytes: Avg=54.67, StdDev=0.47
+  - Destination sent bytes: Avg=60.5, StdDev=14.53
+
+[SRC: 192.168.28.131 -> DST: 13.107.253.59]
+  - Total packets: 6 | SRC: 3 | DST: 3
+  - Avg interval: 0.026s | Jitter: 0.051s
+  - Source sent bytes: Avg=54.33, StdDev=0.47
+  - Destination sent bytes: Avg=75, StdDev=29.7
+
+[SRC: 192.168.28.131 -> DST: 103.43.90.116]
+  - Total packets: 8 | SRC: 4 | DST: 4
+  - Avg interval: 19.29s | Jitter: 22.274s
+  - Source sent bytes: Avg=55, StdDev=0.0
+  - Destination sent bytes: Avg=54, StdDev=0.0
+
+[SRC: 192.168.28.131 -> DST: 104.18.87.42]
+  - Total packets: 16 | SRC: 8 | DST: 8
+  - Avg interval: 9.02s | Jitter: 17.854s
+  - Source sent bytes: Avg=55, StdDev=0.0
+  - Destination sent bytes: Avg=54, StdDev=0.0
+
+[SRC: 192.168.28.131 -> DST: 142.250.71.161]
+  - Total packets: 8 | SRC: 4 | DST: 4
+  - Avg interval: 19.288s | Jitter: 22.272s
+  - Source sent bytes: Avg=55, StdDev=0.0
+  - Destination sent bytes: Avg=54, StdDev=0.0
+
+[SRC: 192.168.28.129 -> DST: 34.107.243.93]
+  - Total packets: 12 | SRC: 6 | DST: 6
+  - Avg interval: 4.491s | Jitter: 14.126s
+  - Source sent bytes: Avg=74, StdDev=14.87
+  - Destination sent bytes: Avg=60.5, StdDev=14.53
+
+[SRC: 192.168.28.129 -> DST: 34.36.137.203]
+  - Total packets: 12 | SRC: 6 | DST: 6
+  - Avg interval: 4.402s | Jitter: 13.811s
+  - Source sent bytes: Avg=74, StdDev=14.87
+  - Destination sent bytes: Avg=60.5, StdDev=14.53
+
+[SRC: 192.168.28.129 -> DST: 34.149.100.209]
+  - Total packets: 12 | SRC: 6 | DST: 6
+  - Avg interval: 4.575s | Jitter: 14.389s
+  - Source sent bytes: Avg=74, StdDev=14.87
+  - Destination sent bytes: Avg=60.5, StdDev=14.53
+
+[SRC: 192.168.28.131 -> DST: 72.154.7.101]
+  - Total packets: 24 | SRC: 11 | DST: 13
+  - Avg interval: 5.446s | Jitter: 25.247s
+  - Source sent bytes: Avg=173.91, StdDev=183.37
+  - Destination sent bytes: Avg=289.69, StdDev=446.52
+
+[SRC: 192.168.28.131 -> DST: 23.53.210.51]
+  - Total packets: 23 | SRC: 10 | DST: 13
+  - Avg interval: 5.746s | Jitter: 26.234s
+  - Source sent bytes: Avg=143.3, StdDev=164.4
+  - Destination sent bytes: Avg=569.31, StdDev=604.2
+
+[SRC: 192.168.28.131 -> DST: 92.223.76.254]
+  - Total packets: 11 | SRC: 6 | DST: 5
+  - Avg interval: 6.072s | Jitter: 17.956s
+  - Source sent bytes: Avg=103, StdDev=104.29
+  - Destination sent bytes: Avg=133.4, StdDev=156.81
+
+[SRC: 192.168.28.129 -> DST: 145.239.10.41]
+  - Total packets: 105 | SRC: 47 | DST: 58
+  - Avg interval: 0.6s | Jitter: 5.786s
+  - Source sent bytes: Avg=142.81, StdDev=171.92
+  - Destination sent bytes: Avg=564.84, StdDev=631.21
+
+[SRC: 192.168.28.129 -> DST: 172.64.149.23]
+  - Total packets: 66 | SRC: 36 | DST: 30
+  - Avg interval: 1.123s | Jitter: 3.064s
+  - Source sent bytes: Avg=96.5, StdDev=116.9
+  - Destination sent bytes: Avg=195.9, StdDev=424.37
+
+[SRC: 192.168.28.129 -> DST: 108.157.32.75]
+  - Total packets: 112 | SRC: 29 | DST: 83
+  - Avg interval: 0.544s | Jitter: 5.625s
+  - Source sent bytes: Avg=112.83, StdDev=129.36
+  - Destination sent bytes: Avg=1145.2, StdDev=562.27
+
+[SRC: 192.168.28.129 -> DST: 142.250.71.195]
+  - Total packets: 49 | SRC: 25 | DST: 24
+  - Avg interval: 1.587s | Jitter: 3.577s
+  - Source sent bytes: Avg=161.64, StdDev=179.58
+  - Destination sent bytes: Avg=433.46, StdDev=448.64
+
+[SRC: 192.168.28.129 -> DST: 142.250.71.162]
+  - Total packets: 23 | SRC: 11 | DST: 12
+  - Avg interval: 2.732s | Jitter: 12.359s
+  - Source sent bytes: Avg=140.64, StdDev=188.63
+  - Destination sent bytes: Avg=364.83, StdDev=539.92
+
+[SRC: 192.168.28.129 -> DST: 142.250.199.226]
+  - Total packets: 43 | SRC: 20 | DST: 23
+  - Avg interval: 1.415s | Jitter: 8.978s
+  - Source sent bytes: Avg=147.35, StdDev=196.17
+  - Destination sent bytes: Avg=376.83, StdDev=526.88
+
+[SRC: 192.168.28.129 -> DST: 142.250.71.130]
+  - Total packets: 22 | SRC: 11 | DST: 11
+  - Avg interval: 2.83s | Jitter: 12.488s
+  - Source sent bytes: Avg=140.45, StdDev=188.06
+  - Destination sent bytes: Avg=374.55, StdDev=546.04
+
+[SRC: 192.168.28.129 -> DST: 142.250.197.33]
+  - Total packets: 21 | SRC: 10 | DST: 11
+  - Avg interval: 2.951s | Jitter: 12.715s
+  - Source sent bytes: Avg=148.5, StdDev=195.42
+  - Destination sent bytes: Avg=374.64, StdDev=546.21
+
+[SRC: 192.168.28.129 -> DST: 142.250.197.228]
+  - Total packets: 20 | SRC: 10 | DST: 10
+  - Avg interval: 3.184s | Jitter: 12.971s
+  - Source sent bytes: Avg=147.2, StdDev=191.56
+  - Destination sent bytes: Avg=402.5, StdDev=558.77
+
+[SRC: 192.168.28.131 -> DST: 52.123.129.14]
+  - Total packets: 25 | SRC: 12 | DST: 13
+  - Avg interval: 0.362s | Jitter: 1.598s
+  - Source sent bytes: Avg=186.58, StdDev=226.52
+  - Destination sent bytes: Avg=675.31, StdDev=599.66
+
+[SRC: 192.168.28.131 -> DST: 4.213.25.242]
+  - Total packets: 2 | SRC: 1 | DST: 1
+  - Avg interval: 0.0s | Jitter: 0.0s
+  - Source sent bytes: Avg=55, StdDev=0.0
+  - Destination sent bytes: Avg=54, StdDev=0.0
+
+[SRC: 192.168.28.131 -> DST: 13.89.179.8]
+  - Total packets: 41 | SRC: 18 | DST: 23
+  - Avg interval: 0.131s | Jitter: 0.494s
+  - Source sent bytes: Avg=382.61, StdDev=475.01
+  - Destination sent bytes: Avg=363.17, StdDev=541.07
+
+[SRC: 192.168.28.131 -> DST: 40.126.16.164]
+  - Total packets: 32 | SRC: 11 | DST: 21
+  - Avg interval: 0.025s | Jitter: 0.088s
+  - Source sent bytes: Avg=564.82, StdDev=600.87
+  - Destination sent bytes: Avg=863, StdDev=701.41
+
+[SRC: 192.168.28.131 -> DST: 23.53.210.166]
+  - Total packets: 1385 | SRC: 340 | DST: 1045
+  - Avg interval: 0.003s | Jitter: 0.036s
+  - Source sent bytes: Avg=342.86, StdDev=559.35
+  - Destination sent bytes: Avg=1242.0, StdDev=492.51
+
+[SRC: 192.168.28.131 -> DST: 150.171.30.10]
+  - Total packets: 27 | SRC: 12 | DST: 15
+  - Avg interval: 0.019s | Jitter: 0.04s
+  - Source sent bytes: Avg=131, StdDev=125.3
+  - Destination sent bytes: Avg=605.6, StdDev=607.69
+
+[SRC: 192.168.28.131 -> DST: 23.50.21.119]
+  - Total packets: 11 | SRC: 6 | DST: 5
+  - Avg interval: 0.035s | Jitter: 0.031s
+  - Source sent bytes: Avg=135, StdDev=110.4
+  - Destination sent bytes: Avg=372.6, StdDev=391.73
+
+[SRC: 192.168.28.131 -> DST: 23.53.208.9]
+  - Total packets: 997 | SRC: 253 | DST: 744
+  - Avg interval: 0.001s | Jitter: 0.014s
+  - Source sent bytes: Avg=81.87, StdDev=93.22
+  - Destination sent bytes: Avg=1316.44, StdDev=381.5
+
+[SRC: 192.168.28.131 -> DST: 23.53.210.57]
+  - Total packets: 222 | SRC: 74 | DST: 148
+  - Avg interval: 0.002s | Jitter: 0.007s
+  - Source sent bytes: Avg=141.46, StdDev=149.58
+  - Destination sent bytes: Avg=1033.52, StdDev=610.58
+

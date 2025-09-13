@@ -1,0 +1,32 @@
+suricata -> signature-based
+1. C2 IoC
+- IP/domain
+- X.509 certi hash
+- JA3/JA3S hash
+
+2. live update (threat hunting)
+- User-Agent
+- URI pattern
+- common protocol on uncommon port
+
+zeek -> behavioral-based
+- periodicity (connection interval, jitter)
+- payload size
+- Domain Generation Algorithms
+- self-signed certificate, short expiry time
+- connection duration
+
+
+ELK
+- collect log from suricata, zeek (filebeat)
+- calculate analyse metrics, suspicious score (logstash - realtime, python - batch)
+- store for query (elasticsearch)
+- visualize (kibana)
+
+cmd
+capinfos
+zeek-cut -d 
+
+
+some conclusion from the analysis
+- In the middle of the C2 traffic: jitter is small, send = receive

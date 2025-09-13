@@ -61,6 +61,9 @@ output.elasticsearch:
   username: filebeat_internal
   password: ${FILEBEAT_INTERNAL_PASSWORD}
 
+setup.kibana:
+  host: kibana:5601
+
 # output.logstash:
 #   hosts: [ logstash:5044 ]
   # username: filebeat_internal

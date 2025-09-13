@@ -9,69 +9,67 @@ import numpy as np
 ELASTIC_HOST = os.environ.get("ELASTIC_HOST", "elasticsearch")
 ELASTIC_PORT = int(os.environ.get("ELASTIC_PORT", 9200))
 
-# Index để đọc dữ liệu Zeek conn log
-# SOURCE_INDEX = "filebeat-*-zeek-conn-*"
 SOURCE_INDEX = "filebeat*"
-# Index để ghi kết quả điểm nghi ngờ
 TARGET_INDEX = "suspicion_scores"
 
-# Ngưỡng để coi là "đều đặn". Càng nhỏ càng đều.
-PERIODICITY_THRESHOLD_SECONDS = 5.0
+# Internal network prefix
+INTERNAL_PREFIX = os.environ.get("INTERNAL_PREFIX", "192.168.28.")
+# C2 IP Blacklist
+BLACKLIST = {}
 
-# --- LẤY CREDENTIALS TỪ BIẾN MÔI TRƯỜNG ---
+# --- LẤY CREDENTIALS ---
 ANALYZER_USER = os.environ.get("ANALYZER_USER")
 ANALYZER_PASSWORD = os.environ.get("ANALYZER_PASSWORD")
 
-# --- KẾT NỐI ELASTICSEARCH ---
+# --- KẾT NỐI ---
 print(f"Connecting to Elasticsearch at {ELASTIC_HOST}:{ELASTIC_PORT}...")
 try:
-    # Kiểm tra xem credentials có được cung cấp hay không
     if ANALYZER_USER and ANALYZER_PASSWORD:
-        print(f"Authenticating with user '{ANALYZER_USER}'...")
         connections.create_connection(
             hosts=[{'host': ELASTIC_HOST, 'port': ELASTIC_PORT}],
-            # Thêm tham số http_auth để xác thực
             http_auth=(ANALYZER_USER, ANALYZER_PASSWORD)
         )
     else:
-        # Kết nối không cần xác thực (dùng cho môi trường dev/test)
-        print("Connecting without authentication.")
-        connections.create_connection(hosts=[{'host': ELASTIC_HOST, 'port': ELASTIC_PORT}])
-        
+        connections.create_connection(
+            hosts=[{'host': ELASTIC_HOST, 'port': ELASTIC_PORT}]
+        )
     print("Successfully connected to Elasticsearch.")
 except Exception as e:
     print(f"Could not connect to Elasticsearch: {e}")
     exit(1)
 
+def classify_ip(ip: str) -> str:
+    return "internal" if ip.startswith(INTERNAL_PREFIX) else "external"
+
 def analyze_periodicity():
-    """
-    Phân tích conn.log để tìm các kết nối có tính chu kỳ và ghi điểm.
-    """
     client = connections.get_connection()
-    
-    # 1. TRUY VẤN DỮ LIỆU TRONG 5 PHÚT GẦN NHẤT
-    end_time = datetime.now(timezone.utc)
+
+    # 1. Query dữ liệu 5 phút gần nhất
+    end_time = datetime.now(timezone(timedelta(hours=7)))
     start_time = end_time - timedelta(minutes=5)
 
     s = Search(index=SOURCE_INDEX)\
         .filter("range", **{'@timestamp': {"gte": start_time, "lt": end_time}})\
         .source(['@timestamp', 'source.ip', 'destination.ip'])
-    
-    print('debuggg', s)
 
     print(f"Querying data from {start_time} to {end_time}...")
-    
     results = s.scan()
-    
-    # 2. CHUYỂN DỮ LIỆU SANG PANDAS DATAFRAME
+
+    # 2. Load vào DataFrame
     data = []
     for r in results:
-        # Thêm kiểm tra để chắc chắn các trường tồn tại
-        if 'source' in r and 'ip' in r.source and 'destination' in r and 'ip' in r.destination:
+        source = r.to_dict()
+        src_ip = (source.get("source", {}).get("ip") or
+                  source.get("source", {}).get("address"))
+        dst_ip = (source.get("destination", {}).get("ip") or
+                  source.get("destination", {}).get("address"))
+        timestamp = source.get("@timestamp")
+
+        if src_ip and dst_ip and timestamp:
             data.append({
-                'timestamp': r['@timestamp'],
-                'src_ip': r.source.ip,
-                'dst_ip': r.destination.ip
+                "timestamp": timestamp,
+                "src_ip": src_ip,
+                "dst_ip": dst_ip
             })
 
     if not data:
@@ -81,48 +79,104 @@ def analyze_periodicity():
     df = pd.DataFrame(data)
     df['timestamp'] = pd.to_datetime(df['timestamp'])
     df = df.sort_values(by='timestamp')
-    
     print(f"Analyzing {len(df)} connection logs...")
 
-    # 3. NHÓM THEO CẶP (SRC, DST) VÀ TÍNH TOÁN ĐỘ LỆCH CHUẨN CỦA THỜI GIAN
-    suspicious_events = []
-    
-    grouped = df.groupby(['src_ip', 'dst_ip'])
+    # 3. Gom nhóm theo cặp (unordered)
+    df['pair'] = df.apply(lambda row: tuple(sorted([row['src_ip'], row['dst_ip']])), axis=1)
+    grouped = df.groupby('pair')
 
-    for name, group in grouped:
+    connection_stats = []
+
+    for pair, group in grouped:
         if len(group) < 3:
             continue
-        
+
         time_diffs = group['timestamp'].diff().dt.total_seconds().dropna()
-        
         if time_diffs.empty:
             continue
 
-        std_dev = time_diffs.std()
+        avg_interval = time_diffs.mean()
+        jitter = time_diffs.std()
 
-        # 4. TÍNH ĐIỂM NẾU ĐỘ LỆCH CHUẨN THẤP
-        if not np.isnan(std_dev) and std_dev < PERIODICITY_THRESHOLD_SECONDS:
-            score = 25
-            reason = (f"High Periodicity Detected (std_dev: {std_dev:.2f}s, "
-                      f"count: {len(group)})")
-            
+        # đếm số packet mỗi chiều
+        src_a, src_b = pair
+        sent_a = len(group[group['src_ip'] == src_a])
+        sent_b = len(group[group['src_ip'] == src_b])
+        total_packets = sent_a + sent_b
+
+        # phân loại internal/external
+        ip_role = {ip: classify_ip(ip) for ip in pair}
+        internal_ip = next((ip for ip, role in ip_role.items() if role == "internal"), None)
+        external_ip = next((ip for ip, role in ip_role.items() if role == "external"), None)
+
+        connection_stats.append({
+            "pair": pair,
+            "internal_ip": internal_ip,
+            "external_ip": external_ip,
+            "sent_a": sent_a,
+            "sent_b": sent_b,
+            "total": total_packets,
+            "avg_interval": avg_interval,
+            "jitter": jitter
+        })
+
+    if not connection_stats:
+        print("No valid connections found for scoring.")
+        return
+
+    # 4. Xác định top 3 kết nối nhiều packets nhất
+    sorted_by_total = sorted(connection_stats, key=lambda x: x['total'], reverse=True)
+    top3_pairs = {tuple(item['pair']) for item in sorted_by_total[:3]}
+
+    suspicious_events = []
+
+    for stat in connection_stats:
+        score = 0
+        reasons = []
+
+        if stat['external_ip'] in BLACKLIST:
+            score += 30
+            reasons.append(f"External IP {stat['external_ip']} in blacklist")
+
+        if stat['sent_a'] == stat['sent_b']:
+            score += 15
+            reasons.append("Packets sent == received")
+
+        if tuple(stat['pair']) in top3_pairs:
+            score += 20
+            reasons.append("Top 3 by total packets")
+
+        if stat['avg_interval'] < 3:
+            score += 15
+            reasons.append(f"Avg interval {stat['avg_interval']:.2f}s < 3s")
+
+        if stat['jitter'] < 2:
+            score += 20
+            reasons.append(f"Jitter {stat['jitter']:.2f}s < 2s")
+
+        if score > 0:
             event = {
                 "@timestamp": datetime.now(timezone.utc).isoformat(),
-                "source": {"ip": name[0]},
-                "destination": {"ip": name[1]},
+                "source": {"ip": stat['internal_ip']},
+                "destination": {"ip": stat['external_ip']},
                 "suspicion_score": score,
-                "reason": reason
+                "reason": "; ".join(reasons),
+                "stats": {
+                    "total_packets": stat['total'],
+                    "avg_interval": round(stat['avg_interval'], 3),
+                    "jitter": round(stat['jitter'], 3),
+                }
             }
             suspicious_events.append(event)
-            print(f"Found suspicious activity: {event}")
+            print(f"[+] Suspicious connection: {event}")
 
-    # 5. GHI KẾT QUẢ VÀO INDEX MỚI
+    # 5. Ghi kết quả vào Elasticsearch
     if suspicious_events:
         print(f"Writing {len(suspicious_events)} suspicious events to index '{TARGET_INDEX}'...")
         for event in suspicious_events:
             client.index(index=TARGET_INDEX, document=event)
     else:
-        print("No suspicious periodic traffic found.")
+        print("No suspicious traffic found.")
 
 if __name__ == "__main__":
     analyze_periodicity()
