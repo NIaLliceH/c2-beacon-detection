@@ -1,0 +1,69 @@
+# ----------------------------------------------------
+# Example configuration file for C2 Detection Script
+# ----------------------------------------------------
+
+# Elasticsearch connection details
+elasticsearch:
+  host: "elasticsearch"
+  port: 9200
+  user: "elastic"
+  password: "changeme"
+  verify_certs: false
+  alerts_index: "c2-detection-alerts"
+
+# Time window for each analysis run
+analysis_interval_minutes: 5
+
+# Internal network prefixes to distinguish between internal and external IPs
+internal_networks:
+  - "192.168.28."
+  # - "172.17."
+  # Add more internal subnets as needed
+
+# Paths to Indicator of Compromise (IoC) files (one entry per line)
+ioc_files:
+  ip: "iocs/ip_ioc.txt"
+  domain: "iocs/domain_ioc.txt"
+  ja3: "iocs/ja3_ioc.txt"
+  user_agent: "iocs/user_agent_ioc.txt"
+
+# Paths to whitelist files to reduce false positives
+whitelist_files:
+  ip: "whitelists/ip_whitelist.txt"
+  domain: "whitelists/domain_whitelist.txt"
+  ja3: "whitelists/ja3_whitelist.txt"
+
+# Weights for the heuristic scoring model. Adjust these based on your environment's risk tolerance.
+heuristic_weights:
+  # High-confidence indicators
+  ioc_ip: 80
+  ioc_domain: 80
+  ioc_ja3: 90
+  ioc_user_agent: 70
+  tls_self_signed_cert: 75
+
+  # Medium-confidence indicators
+  dns_entropy: 30
+  http_uri_entropy: 25
+  tls_rare_ja3: 40
+  http_rare_user_agent: 35
+  tls_sni_cert_mismatch: 30
+  dns_tunnel_qtype: 45
+
+  # Low-confidence/corroborating indicators
+  conn_long_duration: 10
+  conn_data_exfil_pattern: 15
+
+# Alerting thresholds
+alert_thresholds:
+  heuristic: 60 # Generate an alert if the heuristic score is >= this value
+
+# Machine Learning Model Configuration
+ml_model:
+  enabled: true # Set to true to enable ML-based anomaly detection
+  model_path: "models/isolation_forest_model.joblib" # Path to the trained model file
+  scaler_path: "models/scaler.joblib" # Path to the feature scaler file
+  # The 'contamination' parameter should match the one used during training.
+  # It represents the expected proportion of anomalies in the dataset.
+  contamination: 0.01
+

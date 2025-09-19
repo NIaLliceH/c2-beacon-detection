@@ -25,8 +25,26 @@ ELK
 
 cmd
 capinfos
-zeek-cut -d 
+zeek-cut -d
+rita import --database=taidoor --logs=/home/mbelin/vdt/c2-beacon-detection/traffic/log/taidoor
+/opt/zeek/bin/zeek -r ~/vdt/c2-beacon-detection/traffic/real/cobaltstrike_taidoor_24hr.pcap
 
 
-some conclusion from the analysis
-- In the middle of the C2 traffic: jitter is small, send = receive
+
+
+----
+installed C2 framework:
+sliver
+mythic
+havoc
+empire
+
+
+topo:
+kali (C2) - NAT8 -> 192.168.145.129
+ubuntu (NSM) - host -> 192.168.28.1
+windows (victim) - NAT9
+debian (victim) - NAT9 -> 192.168.28.129
+
+zeek log: /opt/zeek/logs/current
+zeek binary: /opt/zeek/bin/zeek

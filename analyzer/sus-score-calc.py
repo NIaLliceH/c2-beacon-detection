@@ -1,9 +1,9 @@
 import os
 from datetime import datetime, timedelta, timezone
 from elasticsearch_dsl import Search
-from elasticsearch_dsl.connections import connections
+from elasticsearch_dsl import connections
 import pandas as pd
-import numpy as np
+# import numpy as np
 
 # --- CẤU HÌNH ---
 ELASTIC_HOST = os.environ.get("ELASTIC_HOST", "elasticsearch")
@@ -48,9 +48,16 @@ def analyze_periodicity():
     end_time = datetime.now(timezone(timedelta(hours=7)))
     start_time = end_time - timedelta(minutes=5)
 
+    # s = Search(index=SOURCE_INDEX)\
+    #     .filter("range", **{'@timestamp': {"gte": start_time, "lt": end_time}})\
+    #     .source(['@timestamp', 'source.ip', 'destination.ip'])
+
     s = Search(index=SOURCE_INDEX)\
-        .filter("range", **{'@timestamp': {"gte": start_time, "lt": end_time}})\
-        .source(['@timestamp', 'source.ip', 'destination.ip'])
+    .filter("range", **{'@timestamp': {"gte": start_time, "lt": end_time}})
+
+    print("Sample record:")
+    for r in s[:1].execute():
+        print(r.to_dict())
 
     print(f"Querying data from {start_time} to {end_time}...")
     results = s.scan()
@@ -59,6 +66,7 @@ def analyze_periodicity():
     data = []
     for r in results:
         source = r.to_dict()
+        print(source)
         src_ip = (source.get("source", {}).get("ip") or
                   source.get("source", {}).get("address"))
         dst_ip = (source.get("destination", {}).get("ip") or

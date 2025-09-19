@@ -1,0 +1,12 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	weird
+#open	2025-09-18-11-42-39
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	name	addl	notice	peer	source
+#types	time	string	addr	port	addr	port	string	string	bool	string	string
+1595005954.560878	-	192.168.99.51	0	104.248.234.238	0	bad_IP_checksum	-	F	zeek	IP
+1595090663.092249	Cgv0HJ2hhypMIFYKhj	192.168.99.52	52727	192.168.99.51	7680	possible_split_routing	-	F	zeek	-
+1595090663.097142	Cgv0HJ2hhypMIFYKhj	192.168.99.52	52727	192.168.99.51	7680	data_before_established	-	F	zeek	TCP
+#close	2025-09-18-11-42-43
