@@ -13,11 +13,11 @@ filebeat.inputs:
 #     paths:
 #       - /var/log/suricata/eve.json
 
-#   - type: filestream
-#     id: zeek-logs
-#     enabled: true
-#     paths:
-#       - /var/log/zeek/*.log
+  # - type: filestream
+  #   id: zeek-logs
+  #   enabled: true
+  #   paths:
+  #     - /var/log/zeek/*.log
 
 
 filebeat.config:

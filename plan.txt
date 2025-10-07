@@ -28,7 +28,7 @@ capinfos
 zeek-cut -d
 rita import --database=taidoor --logs=/home/mbelin/vdt/c2-beacon-detection/traffic/log/taidoor
 /opt/zeek/bin/zeek -r ~/vdt/c2-beacon-detection/traffic/real/cobaltstrike_taidoor_24hr.pcap
-
+sudo chmod a+rw /dev/vmnet0
 
 
 
@@ -48,3 +48,100 @@ debian (victim) - NAT9 -> 192.168.28.129
 
 zeek log: /opt/zeek/logs/current
 zeek binary: /opt/zeek/bin/zeek
+
+SecurityOnion:
+sec-oni
+nialliceh@gmail.com
+nialliceh3108
+
+
+AC-hunter: veGheanyoil)ovNipBobHor2 -> nialliceh3108
+alice@email.com -> same
+
+
+curl -k -u "admin:password" https://localhost:9200
+
+
+Turn the machine that has both Internet access and Ethernet link into a gateway:
+# Enable IP forwarding
+echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
+sudo sysctl -w net.ipv4.ip_forward=1
+
+# NAT rules
+sudo iptables -t nat -A POSTROUTING -o wlp0s20f3 -j MASQUERADE
+sudo iptables -A FORWARD -i enp0s31f6 -o wlp0s20f3 -j ACCEPT
+sudo iptables -A FORWARD -i wlp0s20f3 -o enp0s31f6 -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+
+ip route add default via <LAN_IP_of_machine1>
+set DNS 8.8.8.8
+
+
+zcat conn.*.log.gz | sort -n > conn.log
+
+
+Nghiên cứu giải pháp phát hiện hoạt động C2 Beaconing trên hệ thống NSM/NDR
+
+1. Tổng quan đề tài
+- C2 là 1 kỹ thuật trong redteam mà kẻ tấn công thường sử dụng để điều khiển các máy nhiễm mã độc về lâu dài cho các mục đích khác nhau. Mã độc giao tiếp với kẻ tấn công thông qua các tín hiệu định kì gọi là beaconing, các tín hiệu này thường có kích thước nhỏ, đều đặn từ trong mạng nội bộ ra bên ngoài (outbound)
+- Việc phát hiện dấu hiệu hoạt động C2 beaconing trên các hệ thống giám sát lưu lượng mạng bằng rule tĩnh dựa trên các trường trong log hay IoC chưa hiệu quả, dễ bỏ sót các mối nguy hại mới hoặc được điều chỉnh 1 chút để né tránh bị phát hiện
+- Đề tài này giải quyết vấn đề đặt ra bằng cách phân tích hành vi trong lưu lượng mạng bằng cách tính toán các chỉ số đại diện cho đặc điểm giao tiếp giữa máy nạn nhân và máy chủ C2 như tần suất kết nối, thời gian kết nối, độ trễ (jitter), kích thước payload,... sau đó đánh giá mức độ tương đồng với đặc trưng của beacon thông qua các giá trị thống kê trong toán học như bowley skewness, median absolute deviation, auto-correlation, shannon entropy,... Đồng thời, để giải quyết vấn đề tương đồng với đặc điểm của các hoạt động lành tính khác như update, ta sẽ kết hợp lọc với danh sách IoC cập nhật thường xuyên, check các trường header như User-Agent, Server name, Host có bị trống hay không
+- Ta sẽ xây dựng hệ thống sẽ thu thập các trường dữ liệu từ các gói tin thông qua công cụ giám sát lưu lượng mạng Zeek, lưu vào cơ sở dữ liệu Elasticsearch để thuận lợi cho việc truy vấn nhanh phục vụ cho việc điều tra phân tích, nền tảng visualize dữ liệu thu thập/tính toán trong Kibana. 1 script python được chạy định kì sẽ tính đoán các giá trị feature (x) trên tập dữ liệu đã biết nhãn beacon / lành tính đối với mỗi cặp IP, sử dụng model Random Forest trong thư viện của Python để tạo ra 1 hàm có khả năng dự đoán mức đô beacon trên 1 tập feature x của traffic giữa 2 IP bất kì.
+
+
+2. Các khái niệm
+- Khái niệm Command & Control (C2), beaconing, phân loại beacon
+- Mô hình hoạt động C2, một số framework thường được sử dụng
+- Khái niệm NSM/NDR, một số công cụ thường được sử dụng
+
+2. Kiến trúc hệ thống
+- Giới thiệu về NSM Zeek, vì sao chọn Zeek thay vì Suricata?
+- Giới thiệu bộ công cụ Elasticsearch, Kibana để lưu trữ log và trực quan hóa dữ liệu phân tích
+- Giới thíệu công cụ Security Onion: nền tảng tích hợp sẵn các công cụ cần thíết cùng với khả năng nâng cao hiệu quả phát hiện bằng cách áp dụng giải pháp UEBA với Elastic agent (cá nhân hóa mô hình phát hiện đối với từng máy/cụm máy trong mạng cần giám sát.
+- Python script được chạy định kỳ để đọc log từ elastic, sử dụng model ML để tính toán số điểm nghi ngờ và lưu lại vào elasticsearch
+
+3. Detect methods
+- đọc các log cần thiết (conn.log, dns.log, http.log, ssl.log, x509.log) vào dataframe
+- so sánh các trường như dstIP, JA3S với danh sách IoC để phát hiện sớm mối nguy hại đã biết, gán score = 1
+
+* Tạo ra các trường feature x cho mô hình:
+- kiểm tra trường service (http) có tương ứng với dst_port phổ biến hay không và gán 0/1 vào nhãn uncommon_port
+- kiểm tra trường server_name (ssl) có match với certificate.subject (x509) hay không và gán 0/1 vào nhãn SNI_match_cert
+- đối với conn.log nhóm các log cùng IP nguồn và đích để tạo ra danh sách timestamp, datasize (số byte đã gửi) và duration (thời gian mỗi kết nối)
+- đối với ssl, nhóm theo IP nguồn và SNI để phát hiện trong tình huống mã độc giao tiếp với nhiều IP C2 khác nhau, đối với http nhóm theo IP nguồn và host
+- tính toán các giá trị bowley skewness, median absolute deviation, auto-correlation trên 2 danh sách này ở mỗi dataframe (conn, ssl, http) và chọn giá trị max cho mỗi trường điểm (0-1) sau: bowley_skewness, mad, auto_corr
+
+Tạo bộ dữ liệu training:
+Đối với mỗi cặp IP, sau khi có được các giá trị X sau: uncommon_port, SNI_match_cert, ts_bowley_skewness, ts_mad, ts_auto_corr, dt_bowley_skewness, dt_mad, dur_bowley_skewness, dur_mad
+Và nhãn Y: 0 cho lành tính và 1 cho beacon
+
+- Đưa vào model Random Forest để huấn luyện, sau đó sử dụng model để tính toán số điểm nghi ngờ cho các đợt phân tích sau.
+
+4. Demo & Evaluation
+
+5. Conclusion
+- cần bổ sung: phân loại beacon type
+
+
+# enable monitor
+sudo airmon-ng check kill
+sudo airmon-ng start wlan0
+
+# disable monitor (restore)
+sudo airmon-ng stop wlan0mon
+sudo systemctl start NetworkManager
+
+
+
+
+conn.log
+ts, id.orig_h, id.resp_h, id.resp_p, duration, orig_ip_bytes
+
+ssl.log
+ts, id.orig_h, id.resp_h, sni_matches_cert, server_name, ja3
+
+http.log
+ts, id.orig_h, id.resp_h, host, response_body_len, user_agent
+
+dns.log
+ts, id.orig_h, query, qtype_name, rcode_name

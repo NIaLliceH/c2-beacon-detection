@@ -1,0 +1,63 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	files
+#open	2025-10-06-13-57-07
+#fields	ts	fuid	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	source	depth	analyzers	mime_type	filename	duration	local_orig	is_orig	seen_bytes	total_bytes	missing_bytes	overflow_bytes	timedout	parent_fuid	md5	sha1	sha256	extracted	extracted_cutoff	extracted_size
+#types	time	string	string	addr	port	addr	port	string	count	set[string]	string	string	interval	bool	bool	count	count	count	count	bool	string	string	string	string	string	bool	count
+1755774817.977736	Fs0ZNceww3YvQnomh	C35Yoc4enQzFlikL6j	192.168.28.129	44468	192.168.99.245	8000	HTTP	0	(empty)	text/html	-	0.000000	T	F	562	562	0	0	F	-	-	-	-	-	-	-
+1755774819.565799	Fvl1iC3qLPzap0xCZ7	CtuiIK2RNjOQnJNAF1	192.168.28.129	44484	192.168.99.245	8000	HTTP	0	(empty)	text/html	-	0.000000	T	F	469	469	0	0	F	-	-	-	-	-	-	-
+1755774842.126010	FPcxrr2TMAp1nV5ju5	CtAvIg1DauL9b803oe	192.168.28.129	42804	192.168.99.245	8000	HTTP	0	(empty)	text/html	-	0.000000	T	F	562	562	0	0	F	-	-	-	-	-	-	-
+1755774843.134962	FyMSvI3gHPaPCkdsyc	CpxFUR2o9S42Flf92d	192.168.28.129	42814	192.168.99.245	8000	HTTP	0	(empty)	application/x-executable	-	0.219380	T	F	14217216	14217216	0	0	F	-	-	-	-	-	-	-
+1755774890.376525	FLF1bUukKvw9jvCg4	CVrsZS3DJVCeIPTMef	192.168.28.131	49977	23.53.210.51	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1858	-	0	0	F	-	-	-	-	-	-	-
+1755774947.009863	FxMAS57n3lDD04t8h	CqXk0p4KtEzCadWMxd	192.168.28.129	56396	172.64.149.23	80	HTTP	0	(empty)	application/ocsp-request	-	0.000000	T	T	83	83	0	0	F	-	-	-	-	-	-	-
+1755774947.046775	F3UGR82WAyEnjuHdL6	Cy9ZW13OZhvrEoxmLk	192.168.28.129	56412	172.64.149.23	80	HTTP	0	(empty)	application/ocsp-request	-	0.000000	T	T	83	83	0	0	F	-	-	-	-	-	-	-
+1755774947.052373	FliJHWgkODgQg9YA7	CehtpfHOZR6zjSizc	192.168.28.129	56392	172.64.149.23	80	HTTP	0	(empty)	application/ocsp-request	-	0.000000	T	T	83	83	0	0	F	-	-	-	-	-	-	-
+1755774947.433697	FeGNgD1KgVzEVynxZ	CqXk0p4KtEzCadWMxd	192.168.28.129	56396	172.64.149.23	80	HTTP	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	599	599	0	0	F	-	-	-	-	-	-	-
+1755774947.638197	FKPVw73AnqzpJ9yiwe	CehtpfHOZR6zjSizc	192.168.28.129	56392	172.64.149.23	80	HTTP	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	599	599	0	0	F	-	-	-	-	-	-	-
+1755774947.638217	FNnP3i2hxesUDdDtIe	Cy9ZW13OZhvrEoxmLk	192.168.28.129	56412	172.64.149.23	80	HTTP	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	599	599	0	0	F	-	-	-	-	-	-	-
+1755774948.461703	Fr7D5F4oVZBHM6HqAa	CNvLnb4U4O3bWDBNi	192.168.28.129	41110	142.250.71.195	80	HTTP	0	(empty)	application/ocsp-request	-	0.000000	T	T	83	83	0	0	F	-	-	-	-	-	-	-
+1755774948.570842	FufVr812DQg94zoGRh	CNvLnb4U4O3bWDBNi	192.168.28.129	41110	142.250.71.195	80	HTTP	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	279	279	0	0	F	-	-	-	-	-	-	-
+1755774948.596725	FqULht4FKi7LSWIucd	CNvLnb4U4O3bWDBNi	192.168.28.129	41110	142.250.71.195	80	HTTP	0	(empty)	application/ocsp-request	-	0.000000	T	T	83	83	0	0	F	-	-	-	-	-	-	-
+1755774948.751820	FjgAu4Cxe5lQO7Wsf	CNvLnb4U4O3bWDBNi	192.168.28.129	41110	142.250.71.195	80	HTTP	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	279	279	0	0	F	-	-	-	-	-	-	-
+1755774949.147477	Frx8FBljuoTARdYH9	CNvLnb4U4O3bWDBNi	192.168.28.129	41110	142.250.71.195	80	HTTP	0	(empty)	application/ocsp-request	-	0.000000	T	T	83	83	0	0	F	-	-	-	-	-	-	-
+1755774949.270645	FaL148eRszHku0tZf	CNvLnb4U4O3bWDBNi	192.168.28.129	41110	142.250.71.195	80	HTTP	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	280	280	0	0	F	-	-	-	-	-	-	-
+1755774949.289767	F7OmDG1jmnyIzwCkHl	CNvLnb4U4O3bWDBNi	192.168.28.129	41110	142.250.71.195	80	HTTP	0	(empty)	application/ocsp-request	-	0.000000	T	T	83	83	0	0	F	-	-	-	-	-	-	-
+1755774949.448194	FU4zPJ1FPGnBM0bSbf	CNvLnb4U4O3bWDBNi	192.168.28.129	41110	142.250.71.195	80	HTTP	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	280	280	0	0	F	-	-	-	-	-	-	-
+1755774949.962834	FKZZQg3UqL5x7GJcfk	CNvLnb4U4O3bWDBNi	192.168.28.129	41110	142.250.71.195	80	HTTP	0	(empty)	application/ocsp-request	-	0.000000	T	T	84	84	0	0	F	-	-	-	-	-	-	-
+1755774950.076823	FMkdLFZOxVnKKmus6	CNvLnb4U4O3bWDBNi	192.168.28.129	41110	142.250.71.195	80	HTTP	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	280	280	0	0	F	-	-	-	-	-	-	-
+1755774950.085379	FWZWws1nsqnLHsbjy7	CNvLnb4U4O3bWDBNi	192.168.28.129	41110	142.250.71.195	80	HTTP	0	(empty)	application/ocsp-request	-	0.000000	T	T	83	83	0	0	F	-	-	-	-	-	-	-
+1755774950.265091	FJnambryTtMgMMiF2	CNvLnb4U4O3bWDBNi	192.168.28.129	41110	142.250.71.195	80	HTTP	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	279	279	0	0	F	-	-	-	-	-	-	-
+1755774960.197141	FxGZV13ia4RXZDNIZc	CQ9Q9c3VziIsjrDsOe	192.168.28.131	49995	52.123.129.14	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1858	-	0	0	F	-	-	-	-	-	-	-
+1755775024.042810	Fx7ch11AJOM0Ft2sj2	CEwsGI3fUPr3JugnCc	192.168.28.131	50012	40.126.16.164	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	471	-	0	0	F	-	-	-	-	-	-	-
+1755775024.796643	FKGmYM3BRWCE7EVC34	C0Wn3OQNUGw8fzAbf	192.168.28.131	50013	23.53.210.166	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775025.941335	FoatU34K0BaqPa4tZ8	Cu4WQzq6FqQxfdAb	192.168.28.131	50014	23.53.210.166	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775026.582477	FvQdnn43wGlxvSsKme	CULL0n195skvnVj7U8	192.168.28.131	50015	23.53.210.166	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775026.587684	FseNns4LwwANNEOmw2	C227VD4b9Z9dTyx7yd	192.168.28.131	50016	23.53.210.166	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775026.604162	FmCIh8C9ceoYomOzb	CNgRdx18QF0CCFH283	192.168.28.131	50017	23.53.210.166	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775026.610024	FbzFRLgI9Vngeq6F8	CPD1nbhfI5zAijPxa	192.168.28.131	50018	23.53.210.166	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775026.732766	FyEp7i1xWhs2QyFkff	CwvccW15dJrggnagL3	192.168.28.131	50019	150.171.30.10	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1858	-	0	0	F	-	-	-	-	-	-	-
+1755775026.900162	F8DBQn3qCjDJ5K6My3	CBGPxcG9BONQEPlXj	192.168.28.131	50020	23.50.21.119	80	HTTP	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	471	471	0	0	F	-	-	-	-	-	-	-
+1755775027.001429	FR0ykJ3oSsbNo3DW7h	CYkTuj17PzyhGjf3zj	192.168.28.131	50023	23.53.208.9	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775027.001445	FrkIxW3C9dH1Gvz2T6	CjPXas11uPFajlKUO7	192.168.28.131	50026	23.53.208.9	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775027.003443	F2BnMJ3h1x3A2PEY5	C9Ta0L3kulbyBgQc95	192.168.28.131	50024	23.53.208.9	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775027.005898	Fk2NA41693bnPSX4kd	CltNec2LgPAYcs0MRc	192.168.28.131	50025	23.53.208.9	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775027.005929	F1RKjXNk48ZeRolFc	ChEtjS3vOGEz9jJ2Me	192.168.28.131	50022	23.53.208.9	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775027.006083	FCKgXK1JxsGmvuNfml	Co0Y2A25g7BUgRC1qc	192.168.28.131	50021	23.53.208.9	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775027.106115	Fsk6or4lzXRADtPEXa	CBGPxcG9BONQEPlXj	192.168.28.131	50020	23.50.21.119	80	HTTP	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	314	314	0	0	F	-	-	-	-	-	-	-
+1755775027.927930	F4SC3y3c3UfwTYBdWc	CL83MV6WetoeAtZya	192.168.28.131	50028	23.53.208.9	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775027.965457	FAXxhKYrKfvja1Jp	C2VbK82oq9deMmNPhg	192.168.28.131	50029	23.53.210.57	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775027.966025	FnrGgA4SAb51O7Upc5	C9vA4z2HMj4MjC1505	192.168.28.131	50033	23.53.210.57	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775027.966069	FHBhEY2x9HsjCVfkc7	CTjnRc4PFNTpP0UlK1	192.168.28.131	50031	23.53.210.57	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775027.967091	FCu9aA1eKhWrGD30l	CEMJan1nrnhhXakxEj	192.168.28.131	50030	23.53.210.57	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775027.974907	FCwVMU2lVOVuk4kgIb	Cpxa6SUIL5Y0Lecoj	192.168.28.131	50032	23.53.210.57	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775027.976733	FzTCx72s79fJigGVag	CdZaZR3SWaAnyO3Ky4	192.168.28.131	50034	23.53.210.57	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775028.153006	Fi3mnaDrhDwk7QdV5	CLnm1j3rUDhRM9rned	192.168.28.131	50035	23.53.210.57	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775028.281600	FhTQgW1U9emFnIMErd	CQ73KksUVtKvawSng	192.168.28.131	50036	23.53.210.166	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775028.283832	FMyOq91QKDoDr2NGq5	C3AyEb4ARpgCOapAw7	192.168.28.131	50037	23.53.210.166	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775028.380618	F2fIcUmwaTAUscFab	C0ewZEn14xCBOgEh	192.168.28.131	50038	23.53.210.166	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1049	-	0	0	F	-	-	-	-	-	-	-
+1755775036.896951	FQ9k3433MfA8rnRvG1	CKfFoF3IlBnv0cMut1	192.168.28.131	50042	13.107.246.59	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	727	-	0	0	F	-	-	-	-	-	-	-
+1755775036.965408	FAAwaO3RDTFksEqaWa	CBGPxcG9BONQEPlXj	192.168.28.131	50020	23.50.21.119	80	HTTP	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	471	471	0	0	F	-	-	-	-	-	-	-
+1755775051.136866	FItekG4lSL9DmuOlW7	CTxugsaXNAX6Aifdg	192.168.28.131	50046	150.171.22.17	443	SSL	0	OCSP_REPLY	application/ocsp-response	-	0.000000	F	F	1858	-	0	0	F	-	-	-	-	-	-	-
+#close	2025-10-06-13-57-07

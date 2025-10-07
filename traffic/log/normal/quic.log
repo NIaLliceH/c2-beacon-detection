@@ -1,0 +1,24 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	quic
+#open	2025-09-19-17-24-15
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	version	client_initial_dcid	client_scid	server_scid	server_name	client_protocol	history
+#types	time	string	addr	port	addr	port	string	string	string	string	string	string	string
+1755771365.541596	CCn1Ss36OXBnbWKMKc	192.168.28.129	35556	34.36.137.203	443	1	875ee7dbd41fc535	2e053c	e75ee7dbd41fc535	contile.services.mozilla.com	h3	ISishhhHH
+1755771369.542404	CCNKBr1ha4OAskBgJi	192.168.28.129	55352	172.253.118.94	443	1	58ea5ad9fe27825e	0a8386	f8ea5ad9fe27825e	fonts.gstatic.com	h3	ISishhHhhHH
+1755771369.862584	C5RVWB1CSqWgdb9IGc	192.168.28.129	43079	172.217.194.138	443	1	c3c55daaa2bc65b192f6b928d4487a	5567c2	e3c55daaa2bc65b1	encrypted-tbn2.gstatic.com	h3	ISishhHhhHHHHHH
+1755771369.869191	C0W11V20m7nJVeqDK2	192.168.28.129	49070	142.251.12.94	443	1	97a404ca5831f2ddd0	6cc9c5	f7a404ca5831f2dd	www.gstatic.com	h3	ISishhHhhHH
+1755771369.956356	CCWfVF3QFHbeKObxGk	192.168.28.129	48529	74.125.200.141	443	1	c1d63afd75a4047c1e538031c4578a4fcb75d8	06859f	e1d63afd75a4047c	csp.withgoogle.com	h3	ISishhHhhHHHhHHhH
+1755771370.008202	CF5Bud3Rkxh57u7VAe	192.168.28.129	51954	172.217.194.155	443	1	fa610add26da6c8f	d1d431	fa610add26da6c8f	www.googleadservices.com	h3	ISishhHhhHHHhHHhH
+1755771370.333595	CqH9Ft16s3IcNjGdF1	192.168.28.129	43543	142.250.4.95	443	1	4f48347edfc7abab4755e12848	353e67	ef48347edfc7abab	ogads-pa.clients6.google.com	h3	ISishhHhhhhhhHH
+1755771370.296193	CW7aaI27NIYO82eO2g	192.168.28.129	53093	142.250.4.95	443	1	02954f1f6fa485a4	2532be	e2954f1f6fa485a4	ogads-pa.clients6.google.com	h3	ISishhHhhhhhhHH
+1755771369.863596	CvGnfl2MTLf9dYat88	192.168.28.129	48137	172.217.194.102	443	1	4b9faddda0b86779ffe8ace599b811cb59d3	13550b	eb9faddda0b86779	encrypted-tbn3.gstatic.com	h3	ISishhHhhHH
+1755771369.864614	Cmv9tw4lQPeA7HUudi	192.168.28.129	36710	74.125.130.101	443	1	c9e84a6d6d57b1c2	1d4671	e9e84a6d6d57b1c2	encrypted-tbn1.gstatic.com	h3	ISishhHhhHH
+1755771368.997429	CCoIWz14HVD4Y2KtI1	192.168.28.129	51874	74.125.24.104	443	1	e1722678bae42b99	4858c8	e1722678bae42b99	www.google.com	h3	ISishhHhhhhHHHhH
+1755771371.984390	CZDILD4FPnBDE4h6je	192.168.28.129	46700	74.125.24.104	443	1	02cb2091bb2bfd52	b62f37	e2cb2091bb2bfd52	www.google.com	h3	ISishhHhhhhHH
+1755771371.191542	CSE9VF25woFBTyby5	192.168.28.129	51298	74.125.130.102	443	1	2786421e0f63bd699bbef66bb9b222ce62	df43ba	e786421e0f63bd69	play.google.com	h3	ISishhHhhhhHH
+1755771375.869952	CgQJH621dVvp2vDGJ2	192.168.28.129	45780	104.18.41.158	443	1	e67c0d2b548d6add2e82012f8c	dee798	0154102b9ac152620556572b73c16c7d0f9308a3	persistent.oaistatic.com	h3	ISiishhhHHHHHH
+1755771371.599490	CkmGDi20AMnmXg3Gla	192.168.28.129	50947	172.64.146.98	443	1	e15efef35256a3e141	7aa9f5	0162da83776125ccc862cd80066110ee3c157f4f	cdn.oaistatic.com	h3	ISishhhHH
+#close	2025-09-19-17-24-15

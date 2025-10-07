@@ -1,7 +1,7 @@
 import os
 from datetime import datetime, timedelta, timezone
-from elasticsearch_dsl import Search
-from elasticsearch_dsl import connections
+from elasticsearch.dsl import Search
+from elasticsearch.dsl import connections
 import pandas as pd
 # import numpy as np
 

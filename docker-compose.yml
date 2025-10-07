@@ -150,21 +150,19 @@ services:
     restart: unless-stopped
     # command: [ "-c", "/usr/share/filebeat/filebeat.yml", "-e", "--strict.perms=false", "setup", "--pipelines", "ingest-zeek-conn", "filebeat", "modules", "enable", "zeek", "ingest-zeek-conn" ]
 
-  analyzer:
-    container_name: analyzer
-    build:
-      context: analyzer/
-    environment:
-      ELASTIC_HOST: elasticsearch
-      ANALYZER_USER: analyzer_internal
-      ANALYZER_PASSWORD: ${ANALYZER_INTERNAL_PASSWORD:-}
-    networks:
-      - elk
-    depends_on:
-      - elasticsearch
-    restart: unless-stopped
-
-  # zeek:
+  # analyzer:
+  #   container_name: analyzer
+  #   build:
+  #     context: analyzer/
+  #   environment:
+  #     ELASTIC_HOST: elasticsearch
+  #     ANALYZER_USER: analyzer_internal
+  #     ANALYZER_PASSWORD: ${ANALYZER_INTERNAL_PASSWORD:-}
+  #   networks:
+  #     - elk
+  #   depends_on:
+  #     - elasticsearch
+  #   restart: unless-stopped
 
 
 networks:

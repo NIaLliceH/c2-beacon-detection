@@ -1,0 +1,32 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	quic
+#open	2025-10-06-13-57-07
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	version	client_initial_dcid	client_scid	server_scid	server_name	client_protocol	history
+#types	time	string	addr	port	addr	port	string	string	string	string	string	string	string
+1755774848.812822	CIRQVG6tAzvrdrUbe	192.168.28.131	65487	142.250.198.34	443	1	41726759c817cb54	(empty)	e1726759c817cb54	securepubads.g.doubleclick.net	h3	IISIiiiisIiIhhHH
+1755774823.027299	CxfSOLJAyG5gmLnD9	192.168.28.131	52196	113.171.12.211	443	1	22a7682ff4328e7c	(empty)	17603dfa5fc05930	www.bing.com	h3	IISIiiishHihH
+1755774858.040148	CRENQ43jHCEeLsdN86	192.168.28.131	64609	74.125.130.84	443	1	d8bdc7662f7c0a11	(empty)	f8bdc7662f7c0a11	accounts.google.com	h3	IISZZZiiishH
+1755774857.973619	CI1c7o215Ljuj7jju	192.168.28.131	61365	172.217.194.156	443	1	056b2fc60d0e0808	(empty)	e56b2fc60d0e0808	stats.g.doubleclick.net	h3	IISZiiishHH
+1755774858.328741	CAgnxu4gVfbAFvAERc	192.168.28.131	52593	74.125.130.84	443	1	b1602b743f939c6d	(empty)	f1602b743f939c6d	accounts.google.com	h3	IISZZiiishH
+1755774857.803430	Cb10Ym1lsuUmAT2qC2	192.168.28.131	63057	142.250.66.46	443	1	5591171afa6839e4	(empty)	f591171afa6839e4	www.google-analytics.com	h3	IISZiiishH
+1755774857.421257	ClWrLt4iUDaZCDxVAb	192.168.28.131	62612	113.171.12.225	443	1	a5608b3bd39d0620	(empty)	225cc1a05fc05930	www.bing.com	h3	IISiiishH
+1755774864.072602	C6ejiq3TxYLjbu1Ofb	192.168.28.131	63317	157.240.15.60	443	1	518365ad591cc8b5	(empty)	ad007f7e0390390b	www.whatsapp.com	h3	IISZishHh
+1755774856.531550	CrasLd4cQUw4Muo6Ya	192.168.28.131	59536	3.162.58.100	443	1	de15590e148f500b	(empty)	0c0e01029cd6abe235b36fb80f77705a4b56b10d	web-perf.booking.com	h3	IISiishhhHhHH
+1755774929.103704	CfbCtu3gfeMa5Cmdx2	192.168.28.131	63800	163.70.158.60	443	1	78646f3c656925dc	(empty)	af00e4010eb8887a	www.whatsapp.com	h3	IISZishhhHHh
+1755774948.980465	C9ATQB38iNe5mUfrh5	192.168.28.129	45681	142.250.199.226	443	1	92c9f56e985ea618	4c20dd	f2c9f56e985ea618	googleads.g.doubleclick.net	h3	ISisHhhHhHH
+1755774949.429891	C3O7wc2ipUpJmGEF7c	192.168.28.129	42256	142.250.197.33	443	1	c6ed0a89da66bf1a	a000f9	e6ed0a89da66bf1a	ep2.adtrafficquality.google	h3	ISisHhhHhHH
+1755774949.811252	CfFxTv4R6yT6gBiekj	192.168.28.129	42060	142.250.197.228	443	1	7ad4d3684ba84ff5f6f9aa5f57f906	922e6c	fad4d3684ba84ff5	www.google.com	h3	ISisHhhhhhHHHHhh
+1755774948.195195	CAJHWLcHUkT4JcoPj	192.168.28.129	33450	142.250.71.162	443	1	adc53c8f3df6d6bd	d89dee	edc53c8f3df6d6bd	pagead2.googlesyndication.com	h3	ISisHhhHhHHHhhHHHhh
+1755774949.014835	CiewN3RiPEvuh65C2	192.168.28.129	50921	142.250.71.130	443	1	41033ae048c5bdcb	21605a	e1033ae048c5bdcb	ep1.adtrafficquality.google	h3	ISisHhhhhHHHHh
+1755774948.178835	CFd597ZcbRDZhTnJ5	192.168.28.131	50804	113.171.12.225	443	1	55f8f60aa6ca086a	(empty)	51f036295bc05930	www.bing.com	h3	IISiiishH
+1755775066.830023	C8GPWA1Ejgqja5YHfk	192.168.28.129	59462	34.36.137.203	443	1	6db2e49519f0ec2877af929712	e8c2d4	edb2e49519f0ec28	contile.services.mozilla.com	h3	ISiishH
+1755775063.716914	CQNwD92RTZxp8VGA9j	192.168.28.131	55994	113.171.12.225	443	1	333b8a8a2672ffa3	(empty)	213ce93329c05930	www.bing.com	h3	IISiiishIHH
+1755775019.083515	CRY3BA3IZb2UhOeXi1	192.168.28.131	63202	157.240.7.54	443	1	1bbdfaf28f6937b4	(empty)	920090af03c56ad0	scontent.whatsapp.net	h3	IISZZZZishHh
+1755775019.039010	CCIptD47dOMrARuflj	192.168.28.131	56695	157.240.15.60	443	1	bda77aae6bc6fac7	(empty)	9700d5470291aa72	static.whatsapp.net	h3	IISZZishHh
+1755775018.521036	CcrfNg3NDbGEusky29	192.168.28.131	59008	157.240.15.60	443	1	bbdd20021660f6dd	(empty)	ba00d2860cc0f8bd	static.whatsapp.net	h3	IISZishHh
+1755775018.519679	C4f3KI12AjaZMUHVfb	192.168.28.131	58663	163.70.158.60	443	1	6a6a27ede277f022	(empty)	9b00623e127bdbd3	www.whatsapp.com	h3	IISZZishHh
+1755775052.156235	CdtFlU2Rqn5DgpDdEh	192.168.28.131	63642	163.70.158.60	443	1	0162cdcbed9e383e	(empty)	92000ca326460d82	www.whatsapp.com	h3	IISZishHh
+#close	2025-10-06-13-57-07

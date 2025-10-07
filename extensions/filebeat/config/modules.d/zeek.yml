@@ -70,7 +70,8 @@
   ssh:
     enabled: false
   ssl:
-    enabled: false
+    enabled: true
+    var.paths: ["/var/log/zeek/ssl.log"]
   stats:
     enabled: false
   syslog:
@@ -82,4 +83,5 @@
   weird:
     enabled: false
   x509:
-    enabled: false
+    enabled: true
+    var.paths: ["/var/log/zeek/x509.log"]

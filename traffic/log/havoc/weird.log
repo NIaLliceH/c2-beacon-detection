@@ -1,0 +1,17 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	weird
+#open	2025-10-06-13-57-07
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	name	addl	notice	peer	source
+#types	time	string	addr	port	addr	port	string	string	bool	string	string
+1755774893.269739	CNNLFu1S0gJMm9SZaj	192.168.28.129	47234	192.168.99.245	8888	bad_HTTP_request	-	F	zeek	HTTP
+1755774893.269739	CNNLFu1S0gJMm9SZaj	192.168.28.129	47234	192.168.99.245	8888	line_terminated_with_single_CR	-	F	zeek	CONTENTLINE
+1755774894.288458	CTZxKmKKVrssYbP41	192.168.28.129	47246	192.168.99.245	8888	bad_HTTP_request	-	F	zeek	HTTP
+1755774894.288458	CTZxKmKKVrssYbP41	192.168.28.129	47246	192.168.99.245	8888	line_terminated_with_single_CR	-	F	zeek	CONTENTLINE
+1755774955.662864	C1wMVZBJ3URtIAxM8	192.168.28.129	39906	192.168.99.245	8888	bad_HTTP_request	-	F	zeek	HTTP
+1755774955.662864	C1wMVZBJ3URtIAxM8	192.168.28.129	39906	192.168.99.245	8888	line_terminated_with_single_CR	-	F	zeek	CONTENTLINE
+1755775039.553608	C6KZHC46iY7nqS7WPi	192.168.28.129	36522	192.168.99.245	8888	bad_HTTP_request	-	F	zeek	HTTP
+1755775039.553608	C6KZHC46iY7nqS7WPi	192.168.28.129	36522	192.168.99.245	8888	line_terminated_with_single_CR	-	F	zeek	CONTENTLINE
+#close	2025-10-06-13-57-07
