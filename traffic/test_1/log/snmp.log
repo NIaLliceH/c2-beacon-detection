@@ -1,0 +1,16 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	snmp
+#open	2025-08-05-00-15-58
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	duration	version	community	get_requests	get_bulk_requests	get_responses	set_requests	display_string	up_since
+#types	time	string	addr	port	addr	port	interval	string	string	count	count	count	count	string	time
+1754316935.312751	CQbpwCrdteA0WjXTa	192.168.2.181	40401	192.168.2.255	161	1.100396	1	public	4	0	0	0	-	-
+1754316939.893610	CelKFpO5ifkpfFdX5	192.168.2.181	51411	192.168.2.255	161	3.241644	1	public	8	0	0	0	-	-
+1754329713.045738	CT3TA62i9zVkiHSLkc	192.168.2.181	56630	192.168.2.255	161	0.000000	1	public	2	0	0	0	-	-
+1754343044.349230	CGKoO322XJYo61ICvk	192.168.2.181	60296	192.168.2.255	161	3.311181	1	public	8	0	0	0	-	-
+1754343051.737943	CwCOCa3t07btrzIwea	192.168.2.181	44406	192.168.2.255	161	19.883430	1	public	38	0	0	0	-	-
+1754343547.622381	CkfZJ018Ac8XbaUcOk	192.168.2.181	45379	192.168.2.255	161	1.101570	1	public	4	0	0	0	-	-
+1754348185.387996	CO8siM1Tr9NL4xqaK3	192.168.2.181	59448	192.168.2.255	161	1.108225	1	public	4	0	0	0	-	-
+#close	2025-08-05-00-16-09
