@@ -1,6 +1,6 @@
 # c2-beacon-detection
 
-
+```bash
 suzue@ubun2:~/vdt2/docker-elk$ docker compose exec elasticsearch bin/elasticsearch-reset-password --batch --user elastic
 WARNING: Owner of file [/usr/share/elasticsearch/config/users] used to be [root], but now is [elasticsearch]
 WARNING: Owner of file [/usr/share/elasticsearch/config/users_roles] used to be [root], but now is [elasticsearch]
@@ -13,8 +13,6 @@ suzue@ubun2:~/vdt2/docker-elk$ docker compose exec elasticsearch bin/elasticsear
 Password for the [kibana_system] user successfully reset.
 New value: ISMY-YsvW+3oHZjb1C_O
 
-
-p, [::]:9300->9300/tcp                                                                                                     docker-elk-elasticsearch-1
 suzue@ubun2:~/vdt2/elk_docker$ docker exec -it dbaeaae99b59 bin/kibana-encryption-keys generate
 ## Kibana Encryption Key Generation Utility
 
@@ -46,3 +44,4 @@ curl -u elastic:changeme -X PUT "http://localhost:9200/_index_template/pcap-c2-t
 -H 'Content-Type: application/json' -d <file>
 
 docker exec -it b41110eb9bde bin/elasticsearch-reset-password -u kibana_system -i
+```
